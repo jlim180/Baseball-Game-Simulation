@@ -1,0 +1,162 @@
+=== PLAYER STATS RECORD ===
+
+Player: 펭귄
+  Singles: 21
+  Doubles: 23
+  Home Runs: 54
+ Hitting Average: 0.641
+-----------------------------
+Player: 쉐이머스
+  Singles: 22
+  Doubles: 10
+  Home Runs: 0
+ Hitting Average: 0.208
+-----------------------------
+Player: 풀범
+  Singles: 16
+  Doubles: 6
+  Home Runs: 1
+ Hitting Average: 0.158
+-----------------------------
+Player: 도티
+  Singles: 20
+  Doubles: 29
+  Home Runs: 32
+ Hitting Average: 0.587
+-----------------------------
+Player: 토토
+  Singles: 1
+  Doubles: 4
+  Home Runs: 1
+ Hitting Average: 0.462
+-----------------------------
+Player: 쵸파
+  Singles: 0
+  Doubles: 0
+  Home Runs: 1
+ Hitting Average: 0.083
+-----------------------------
+Player: 꿀순
+  Singles: 1
+  Doubles: 4
+  Home Runs: 0
+ Hitting Average: 0.417
+-----------------------------
+Player: 판다
+  Singles: 4
+  Doubles: 1
+  Home Runs: 2
+ Hitting Average: 0.583
+-----------------------------
+Player: 꿀뚱
+  Singles: 0
+  Doubles: 0
+  Home Runs: 0
+ Hitting Average: 0.000
+-----------------------------
+Player: 잠뜰
+  Singles: 0
+  Doubles: 0
+  Home Runs: 0
+ Hitting Average: 0.000
+-----------------------------
+Player: 끼끼
+  Singles: 0
+  Doubles: 0
+  Home Runs: 0
+ Hitting Average: 0.000
+-----------------------------
+Player: 꿀복
+  Singles: 0
+  Doubles: 0
+  Home Runs: 0
+ Hitting Average: 0.000
+-----------------------------
+Player: 바토로
+  Singles: 10
+  Doubles: 9
+  Home Runs: 8
+ Hitting Average: 0.184
+-----------------------------
+Player: 돌돌
+  Singles: 9
+  Doubles: 26
+  Home Runs: 8
+ Hitting Average: 0.309
+-----------------------------
+Player: 꿀땡
+  Singles: 13
+  Doubles: 22
+  Home Runs: 34
+ Hitting Average: 0.527
+-----------------------------
+Player: 소소
+  Singles: 21
+  Doubles: 30
+  Home Runs: 19
+ Hitting Average: 0.543
+-----------------------------
+
+
+=== PITCHER STATS RECORD ===
+
+Pitcher: 수달
+  Innings Pitched: 32.3
+  ERA: 4.48
+  WHIP: 1.48
+-----------------------------
+Pitcher: 더락
+  Innings Pitched: 76.0
+  ERA: 6.58
+  WHIP: 1.97
+-----------------------------
+Pitcher: 또또
+  Innings Pitched: 3.7
+  ERA: 12.27
+  WHIP: 3.27
+-----------------------------
+Pitcher: 딘
+  Innings Pitched: 9.7
+  ERA: 4.66
+  WHIP: 1.86
+-----------------------------
+Pitcher: 골드버그
+  Innings Pitched: 1.3
+  ERA: 3.75
+  WHIP: 1.50
+-----------------------------
+Pitcher: 로만
+  Innings Pitched: 0.0
+  ERA: 0.00
+  WHIP: 0.00
+-----------------------------
+Pitcher: HHH
+  Innings Pitched: 0.0
+  ERA: 0.00
+  WHIP: 0.00
+-----------------------------
+Pitcher: 파이리
+  Innings Pitched: 0.0
+  ERA: 0.00
+  WHIP: 0.00
+-----------------------------
+Pitcher: 오스틴
+  Innings Pitched: 0.0
+  ERA: 0.00
+  WHIP: 0.00
+-----------------------------
+Pitcher: 돌
+  Innings Pitched: 83.7
+  ERA: 6.27
+  WHIP: 1.90
+-----------------------------
+Pitcher: 류현진
+  Innings Pitched: 19.3
+  ERA: 14.48
+  WHIP: 3.26
+-----------------------------
+Pitcher: 지방
+  Innings Pitched: 12.0
+  ERA: 8.33
+  WHIP: 2.25
+-----------------------------

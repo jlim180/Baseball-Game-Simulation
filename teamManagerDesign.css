@@ -1,0 +1,274 @@
+/* ===== Theme (same colours as mainDesign.css and team.css) ===== */
+:root {
+    --navy: #0f1f3d;
+    --navy-2: #1b2f57;
+    --red: #d62839;
+    --grass: #2f7d32;
+    --chalk: #fdfcf7;
+    --ink: #1c2233;
+    --muted: #5d6680;
+    --line: #e3e6ee;
+    --soft: #f8f9fc;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(15, 31, 61, 0.12);
+}
+
+/* Team colours, picked by the data-team attribute on each panel */
+.teamPanel[data-team="Kia Tigers"]    { --team: #ea0029; --team-dark: #06141f; }
+.teamPanel[data-team="LG Twins"]      { --team: #c30452; --team-dark: #1a1a1a; }
+.teamPanel[data-team="Lotte Giants"]  { --team: #d00f31; --team-dark: #041e42; }
+.teamPanel[data-team="Samsung Lions"] { --team: #074ca1; --team-dark: #0b1f3f; }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--soft);
+}
+
+/* ===== Header ===== */
+.page-header {
+    padding: 20px 16px 72px;
+    color: var(--chalk);
+    background: linear-gradient(180deg, var(--navy), var(--navy-2));
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.back-link {
+    padding: 0;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+.eyebrow {
+    margin: 24px 0 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #9fb4dd;
+}
+
+#title {
+    margin: 0;
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 8vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+#subtitle {
+    max-width: 560px;
+    margin: 10px 0 0;
+    line-height: 1.5;
+    color: #c8d4ee;
+}
+
+/* ===== Team board ===== */
+.page {
+    max-width: 1100px;
+    margin: -44px auto 0;   /* pull the panels up over the header */
+    padding: 0 16px 32px;
+}
+
+#teamBoard {
+    display: grid;
+    /* As many 240px+ columns as fit: 4 on a laptop, 2 on a tablet, 1 on a phone */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.teamPanel {
+    padding: 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--team);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.teamPanel h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 8px;
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    letter-spacing: 0.04em;
+    color: var(--team-dark);
+}
+
+/* Small team-colour dot before the team name */
+.teamPanel h2::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--team);
+}
+
+/* "Batters" / "Pitchers" labels */
+.teamPanel h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.teamPanel h3::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+.playerRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    transition: background-color 0.15s ease;
+}
+
+.playerRow:hover {
+    background: var(--soft);
+}
+
+.playerRow span {
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.playerRow select {
+    max-width: 140px;
+    padding: 6px 8px;
+    font: inherit;
+    font-size: 0.8rem;
+    color: var(--ink);
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.playerRow select:focus {
+    outline: 2px solid var(--team);
+    outline-offset: 1px;
+}
+
+/* A row whose chosen team isn't the original one (the option marked "selected") */
+.playerRow:has(option:checked:not([selected])) {
+    background: #fff4d6;
+}
+
+.playerRow:has(option:checked:not([selected])) select {
+    color: #fff;
+    background: var(--red);
+    border-color: var(--red);
+}
+
+/* ===== Action bar (stays stuck to the bottom of the screen) ===== */
+#actionBar {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px max(16px, calc((100% - 1100px) / 2 + 16px));
+    background: #fff;
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -8px 24px rgba(15, 31, 61, 0.08);
+}
+
+.messages p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.hint {
+    color: var(--muted);
+}
+
+#warning {
+    font-weight: 600;
+    color: var(--red);
+}
+
+#savedMsg {
+    font-weight: 600;
+    color: var(--grass);
+}
+
+/* Hide the messages until the script writes something in them */
+#warning:empty,
+#savedMsg:empty {
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font: inherit;
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    color: #fff;
+    background: var(--red);
+}
+
+.btn-primary:hover {
+    background: #a91d2c;
+}
+
+.btn-ghost {
+    color: var(--navy);
+    background: transparent;
+    border-color: var(--line);
+}
+
+.btn-ghost:hover {
+    background: var(--soft);
+}

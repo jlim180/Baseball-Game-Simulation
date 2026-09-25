@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Simulation - DBL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="simulationDesign.css">
+</head>
+<body class="fantasy">
+    <header class="page-header">
+        <div class="header-inner">
+            <div class="header-top">
+                <button id="goBack" class="back-link">← Back to DBL</button>
+                <button id="resetStatsBtn" class="btn btn-reset">Reset Player Stats</button>
+            </div>
+            <p class="eyebrow">Fantasy Mode</p>
+            <h1 id="title">Welcome to Fantasy Simulation</h1>
+        </div>
+    </header>
+
+    <main class="page">
+        <!-- Step 1: pick the teams -->
+        <section class="card">
+            <h2 class="step-title"><span class="step-num">1</span> Select two teams to simulate</h2>
+            <div class="matchup">
+                <label class="team-pick">
+                    <span class="team-side">Home</span>
+                    <select id="teams1" name="teams">
+                        <option>Choose a team</option>
+                        <option value="Korea">Korea</option>
+                        <option value="America">America</option>
+                        <option value="Fantasy">Fantasy</option>
+                    </select>
+                </label>
+                <span class="vs">VS</span>
+                <label class="team-pick">
+                    <span class="team-side">Away</span>
+                    <select id="teams2" name="teams">
+                        <option>Choose a team</option>
+                        <option value="Korea">Korea</option>
+                        <option value="America">America</option>
+                        <option value="Fantasy">Fantasy</option>
+                    </select>
+                </label>
+            </div>
+            <div class="controls">
+                <button id="submitTeams" class="btn btn-primary">Submit teams</button>
+                <p id="noSubmitTeam" class="error"></p>
+            </div>
+        </section>
+
+        <!-- Step 2: set the lineups -->
+        <section class="card">
+            <h2 class="step-title"><span class="step-num">2</span> Set your lineups</h2>
+            <div class="lineups">
+                <div id="lineupDisplay1" class="lineup-card"></div>
+                <div id="lineupDisplay2" class="lineup-card"></div>
+            </div>
+            <div class="controls">
+                <button id="submitRoster" class="btn btn-primary" style="display: none;">Submit chosen roster</button>
+                <p id="rosterSubmitted" class="success" style="display: none;">Roster Submitted!</p>
+            </div>
+        </section>
+
+        <!-- Step 3: play the game -->
+        <section class="card">
+            <h2 class="step-title"><span class="step-num">3</span> Play ball</h2>
+            <div class="controls">
+                <button id="submitStart" class="btn btn-primary" style="display: none;">Click to start</button>
+                <p id="cantStart" class="status"></p>
+            </div>
+
+            <div id="scoreDisplay"></div>
+
+            <div class="feed">
+                <div>
+                    <p id="topInning" class="feed-title"></p>
+                    <p id="displayTopInning" class="feed-log"></p>
+                    <p id="inningScoreTop" class="feed-score"></p>
+                </div>
+                <div>
+                    <p id="bottomInning" class="feed-title"></p>
+                    <p id="displayBottomInning" class="feed-log"></p>
+                    <p id="inningScoreBottom" class="feed-score"></p>
+                </div>
+            </div>
+
+            <div class="result">
+                <p id="score" class="final-score"></p>
+                <p id="result" class="result-text"></p>
+                <button id="saveStatsBtn" class="btn btn-primary" style="display: none;">Save Player Stats</button>
+            </div>
+        </section>
+
+        <div class="controls">
+            <button id="refresh" class="btn btn-ghost">Please refresh to restart</button>
+        </div>
+    </main>
+
+    <script src="fantasySimulationFunction.js"></script>
+</body>
+</html>

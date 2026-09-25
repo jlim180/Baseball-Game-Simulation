@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Teams - DBL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="teamManagerDesign.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-inner">
+            <button id="goBack" class="back-link">← Back to DBL</button>
+            <h1 id="title">Manage Teams</h1>
+            <p id="subtitle">Reassign any player to a different team, then save. Simulations will use these rosters until you reset them.</p>
+        </div>
+    </header>
+
+    <main class="page">
+        <div id="teamBoard"></div>
+    </main>
+
+    <div id="actionBar">
+        <div class="messages">
+            <p class="hint">Players you move are highlighted until you save.</p>
+            <p id="warning"></p>
+            <p id="savedMsg"></p>
+        </div>
+        <div class="buttons">
+            <button id="resetTeamsBtn" class="btn btn-ghost">Reset to Default Teams</button>
+            <button id="saveTeamsBtn" class="btn btn-primary">Save Changes</button>
+        </div>
+    </div>
+
+    <script src="teamManagerFunction.js"></script>
+</body>
+</html>

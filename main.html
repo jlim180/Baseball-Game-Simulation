@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인형야구 홈페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mainDesign.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+            <p class="eyebrow">Doll Baseball League · Season Simulator</p>
+            <h1 class="title">DBL</h1>
+            <a class="logo-link">
+                <img class="logo" src="images/DBL_ball_circle.png"
+                     alt="Doll Baseball League logo" title="DBL is Doll Baseball League">
+            </a>
+            <p class="tagline">Pick your teams, set your lineups and play ball.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="actions" aria-label="Game modes">
+            <button id="mySimulator" class="action">
+                <span class="action-icon" aria-hidden="true">⚾</span>
+                <span class="action-label">Simulation Page</span>
+                <span class="action-desc">Play a full game between two league teams</span>
+            </button>
+            <button id="fantasySimulator" class="action">
+                <span class="action-icon" aria-hidden="true">★</span>
+                <span class="action-label">Fantasy Simulation</span>
+                <span class="action-desc">Build a dream roster and see how it plays</span>
+            </button>
+            <button id="manageTeams" class="action">
+                <span class="action-icon" aria-hidden="true">✎</span>
+                <span class="action-label">Manage Teams</span>
+                <span class="action-desc">Edit rosters and player details</span>
+            </button>
+        </section>
+
+        <section class="teams">
+            <h2 class="section-title">Teams</h2>
+            <div class="table-wrap">
+                <table class="team-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Team</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Stadium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a class="team" href="kia.html">
+                                <img src="images/Kia_Tigers_logo.svg.webp" alt="">Kia Tigers
+                            </a></td>
+                            <td>Gwangju</td>
+                            <td>Gwangju Championsfield</td>
+                        </tr>
+                        <tr>
+                            <td><a class="team" href="lg.html">
+                                <img src="images/lgtwins_logo.png" alt="">LG Twins
+                            </a></td>
+                            <td>Seoul</td>
+                            <td>Jamsil Baseball Stadium</td>
+                        </tr>
+                        <tr>
+                            <td><a class="team" href="lotte.html">
+                                <img src="images/lottegiants_logo.png" alt="">Lotte Giants
+                            </a></td>
+                            <td>Busan</td>
+                            <td>Busan Sajik Baseball Stadium</td>
+                        </tr>
+                        <tr>
+                            <td><a class="team" href="samsung.html">
+                                <img src="images/samsung_logo.png" alt="">Samsung Lions
+                            </a></td>
+                            <td>Daegu</td>
+                            <td>Daegu Baseball Stadium</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">DBL · Doll Baseball League</footer>
+
+    <script src="simulation.js"></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+/* ===== Theme ===== */
+:root {
+    --navy: #0f1f3d;
+    --navy-2: #1b2f57;
+    --red: #d62839;
+    --grass: #2f7d32;
+    --chalk: #fdfcf7;
+    --dirt: #c98b55;
+    --ink: #1c2233;
+    --muted: #5d6680;
+    --line: #e3e6ee;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(15, 31, 61, 0.12);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background: linear-gradient(#eaf3ff, var(--chalk) 60%);
+    background-attachment: fixed;
+}
+
+/* ===== Hero ===== */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 56px 16px 96px;
+    text-align: center;
+    color: var(--chalk);
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.18), transparent 60%),
+        linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+}
+
+/* Outfield grass strip with mowing stripes along the bottom */
+.hero::after {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -60px;
+    height: 120px;
+    border-radius: 50% 50% 0 0;
+    background: repeating-linear-gradient(90deg, #2f7d32 0 40px, #37903a 40px 80px);
+    box-shadow: 0 -6px 0 var(--dirt);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #9fb4dd;
+}
+
+.title {
+    margin: 0;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-weight: 400;
+    font-size: clamp(4rem, 14vw, 7.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.06em;
+    color: var(--chalk);
+    text-shadow: 4px 4px 0 var(--red);
+}
+
+.logo-link {
+    display: inline-block;
+    margin: 20px 0 12px;
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+}
+
+.logo-link:hover,
+.logo-link:focus-visible {
+    transform: rotate(-4deg) scale(1.04);
+}
+
+.logo {
+    display: block;
+    height: 200px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
+}
+
+.tagline {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #c8d4ee;
+}
+
+/* ===== Layout ===== */
+main {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+}
+
+/* ===== Game mode buttons ===== */
+.actions {
+    position: relative;
+    z-index: 2;
+    margin-top: -40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 22px 22px 24px;
+    text-align: left;
+    font: inherit;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--navy);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.action:hover,
+.action:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(15, 31, 61, 0.2);
+    border-top-color: var(--red);
+    outline: none;
+}
+
+.action:active {
+    transform: translateY(-1px);
+}
+
+.action-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 6px;
+    font-size: 1.4rem;
+    border-radius: 12px;
+    background: #eef2fa;
+    color: var(--navy);
+}
+
+.action-label {
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+
+.action-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* ===== Teams table ===== */
+.teams {
+    margin-top: 56px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 16px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+    letter-spacing: 0.05em;
+    color: var(--navy);
+}
+
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--line), transparent);
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.team-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.97rem;
+}
+
+.team-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c8d4ee;
+    background: var(--navy);
+}
+
+.team-table td {
+    padding: 14px 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+}
+
+.team-table tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.team-table tbody tr:nth-child(even) {
+    background: #f8f9fc;
+}
+
+.team-table tbody tr:hover {
+    background: #fff3f4;
+}
+
+.team {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.team img {
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--line);
+}
+
+.team:hover,
+.team:focus-visible {
+    color: var(--red);
+}
+
+/* ===== Footer ===== */
+.footer {
+    padding: 24px 16px 32px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 760px) {
+    .actions {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        height: 150px;
+    }
+
+    .team-table th,
+    .team-table td {
+        padding: 12px 14px;
+    }
+}

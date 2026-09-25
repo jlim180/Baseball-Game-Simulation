@@ -1,0 +1,328 @@
+:root {
+    --ink: #1c2233;
+    --muted: #5d6680;
+    --line: #e3e6ee;
+    --soft: #f8f9fc;
+    --chalk: #fdfcf7;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(15, 31, 61, 0.12);
+}
+
+/* ===== Team colours: each page picks one with <body class="..."> ===== */
+.team-kia     { --team: #ea0029; --team-dark: #06141f; }
+.team-lg      { --team: #c30452; --team-dark: #1a1a1a; }
+.team-lotte   { --team: #d00f31; --team-dark: #041e42; }
+.team-samsung { --team: #074ca1; --team-dark: #0b1f3f; }
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inter';
+    color: var(--ink);
+    background: var(--soft);
+}
+
+.team-header {
+    padding: 20px 16px 64px;
+    color: var(--chalk);
+    /* Hard colour stop at 60% makes a diagonal two-tone stripe */
+    background: linear-gradient(115deg, var(--team-dark) 60%, var(--team) 60%);
+}
+
+.header-inner{
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.back-link{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+}
+
+.team-id{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.team-logo{
+    display: block;
+    width: 120px;
+    height: 120px;
+    padding: 14px;
+    object-fit: contain;
+    background: var(--chalk);
+    border-radius: 50%;
+}
+
+.team-logo:hover{
+    transform: scale(1.05);
+}
+
+.team-info{
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.team-name{
+    margin: auto;
+    font-family: 'Sans-serif';
+    font-weight: 400;
+    font-size: clamp(3rem, 9vw, 5rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+/* Page Layout */
+.page{
+    max-width: 1040px;
+    margin: -40px auto 0;
+    padding: 0 16px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card{
+    padding: 24px;
+    background: #fff;
+    border: 1px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.card h2{
+    margin: 0 0 16px;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
+    color: var(--team-dark);
+}
+
+.card-head{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.card-head h2{
+    margin: 0;
+}
+
+/* Season Card */
+.season-pick{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+select{
+    padding: 8px 12px;
+    font: inherit;
+    color: var(--ink);
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.info-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.info{
+    padding: 16px;
+    background: var(--soft);
+    border-left: 4px solid var(--team);
+    border-radius: 10px;
+}
+
+.info h3{
+    margin: 0 0 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.info p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.info a {
+    color: var(--team);
+    text-decoration: none;
+}
+
+.info a:hover {
+    text-decoration: underline;
+}
+
+.info .big {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--team-dark);
+}
+
+.info .big span {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* roster & stats side by side */
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.columns > .card{
+    min-width: 0;
+}
+
+.roster {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: player;   /* start our own numbering at 0 */
+}
+
+.roster li {
+    counter-increment: player;   /* +1 for every player */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    font-weight: 600;
+    border-bottom: 1px solid var(--line);
+}
+
+.roster li:last-child {
+    border-bottom: none;
+}
+
+/* The numbered circle in front of each player */
+.roster li::before {
+    content: counter(player);
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+    color: #fff;
+    background: var(--team-dark);
+    border-radius: 50%;
+}
+
+.pos {
+    margin-left: auto;   /* pushes the badge to the right edge */
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--team);
+    border: 1px solid var(--team);
+    border-radius: 999px;
+}
+
+/* ===== Stats table ===== */
+.table-wrap {
+    overflow-x: auto;
+}
+
+.stats {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.stats th {
+    padding: 10px 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--team-dark);
+}
+
+.stats td {
+    padding: 12px;
+    border-bottom: 1px solid var(--line);
+}
+
+.stats th:first-child,
+.stats td:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+.stats tbody tr:hover {
+    background: var(--soft);
+}
+
+/* Headers with a tooltip get a dotted underline and a "?" cursor */
+.stats th[title] {
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+/* Top-ranked player */
+.stats .leader td {
+    background: color-mix(in srgb, var(--team) 8%, white);
+}
+
+.stats .leader td:first-child::after {
+    content: " ★";
+    color: var(--team);
+}
+
+/* ===== Smaller screens ===== */
+@media (max-width: 800px) {
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-id {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .team-logo {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+
+
